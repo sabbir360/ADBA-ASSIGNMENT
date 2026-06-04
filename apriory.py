@@ -1,3 +1,7 @@
+"""
+Data Mining book 5.2 Apriori Algorithm
+"""
+
 from __future__ import annotations
 
 from itertools import combinations
@@ -11,6 +15,9 @@ class AprioriAnalyzer:
         self.min_confidence = min_confidence / 100
 
     def find_frequent_itemsets(self) -> List[List[str]]:
+        """ 
+        Finds and returns all frequent itemsets that meet the minimum support count. 
+        """
         all_items = sorted(set(item for transaction in self.transactions for item in transaction))
         candidate_itemsets = [[item] for item in all_items]
         frequent_itemsets: List[List[str]] = []
@@ -36,6 +43,9 @@ class AprioriAnalyzer:
         return frequent_itemsets
 
     def generate_rules(self, frequent_itemsets: List[List[str]]) -> None:
+        """
+         Generates and prints association rules from the frequent itemsets.
+        """
         label = "Association Rules"
         print(f"\n{label}")
         print("-" * len(label))
@@ -60,6 +70,9 @@ class AprioriAnalyzer:
                         )
 
     def count_support(self, itemset: List[str]) -> int:
+        """
+        Counts how many transactions contain the given itemset.
+        """
         count = 0
 
         for transaction in self.transactions:
@@ -87,10 +100,10 @@ def main() -> None:
         ["bread", "butter"],
         ["milk", "bread", "butter"],
         
-        ["Diet Coke", "Burger", "Hot Dog"],
-        ["milk", "Burger"],          
-        ["bread", "Burger"],    
-        ["Burger", "Hot Dog"],     
+        # ["Diet Coke", "Burger", "Hot Dog"],
+        # ["milk", "Burger"],          
+        # ["bread", "Burger"],    
+        # ["Burger", "Hot Dog"],     
     ]
 
     analyzer = AprioriAnalyzer(
