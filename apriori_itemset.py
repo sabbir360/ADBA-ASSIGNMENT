@@ -103,25 +103,25 @@ class Apriori:
 
         return counts
 
-    def generate_rules(self) -> List[Tuple[Set[str], Set[str], int, float]]:
-        """Generate association rules from the frequent itemsets."""
-        rules = []
+    # def generate_rules(self) -> List[Tuple[Set[str], Set[str], int, float]]:
+    #     """Generate association rules from the frequent itemsets."""
+    #     rules = []
 
-        for itemset, support_count in self.frequent_itemsets.items():
-            if len(itemset) < 2:
-                continue
+    #     for itemset, support_count in self.frequent_itemsets.items():
+    #         if len(itemset) < 2:
+    #             continue
 
-            for size in range(1, len(itemset)):
-                for left in combinations(itemset, size):
-                    left = frozenset(left)
-                    right = itemset - left
+    #         for size in range(1, len(itemset)):
+    #             for left in combinations(itemset, size):
+    #                 left = frozenset(left)
+    #                 right = itemset - left
 
-                    confidence = support_count / self.frequent_itemsets[left]
+    #                 confidence = support_count / self.frequent_itemsets[left]
 
-                    if confidence >= self.min_confidence:
-                        rules.append((set(left), set(right), support_count, confidence))
+    #                 if confidence >= self.min_confidence:
+    #                     rules.append((set(left), set(right), support_count, confidence))
 
-        return rules
+    #     return rules
 
 
 if __name__ == "__main__":
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     )
 
     frequent_itemsets = apriori.fit()
-    rules = apriori.generate_rules()
+    #rules = apriori.generate_rules()
 
     print("Frequent Itemsets:")
     for itemset, count in sorted(
@@ -150,6 +150,6 @@ if __name__ == "__main__":
     ):
         print(set(itemset), "=>", count)
 
-    print("\nAssociation Rules:")
-    for left, right, support, confidence in rules:
-        print(f"{left} => {right}, support={support}, confidence={confidence:.2f}")
+    # print("\nAssociation Rules:")
+    # for left, right, support, confidence in rules:
+    #     print(f"{left} => {right}, support={support}, confidence={confidence:.2f}")
