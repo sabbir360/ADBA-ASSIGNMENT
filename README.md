@@ -2,9 +2,9 @@
 
 Small Python scripts for two database/data-structure exercises:
 
-- `b_plus_tree_pr.py` implements a B+ tree with insert, search, delete, range search, and tree-print helpers.
+- `b_plus_tree.py` implements a B+ tree with insert, search, delete, range search, and tree-print helpers.
 - `BPlusTreeDrawer.py` renders the tree as ASCII art.
-- `apriory.py` runs an Apriori frequent-itemset and association-rule demo.
+- `apriori_itemset.py` runs an Apriori frequent-itemset and association-rule demo.
 
 ## Requirements
 
