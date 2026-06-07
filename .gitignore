@@ -38,3 +38,6 @@ Thumbs.db
 # Local logs
 *.log
 
+# Downloaded dictionary dataset cache
+dictionary_data.json
+

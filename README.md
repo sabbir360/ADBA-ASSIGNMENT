@@ -4,6 +4,7 @@ Small Python scripts for two database/data-structure exercises:
 
 - `b_plus_tree.py` implements a B+ tree with insert, search, delete, range search, and tree-print helpers.
 - `BPlusTreeDrawer.py` renders the tree as ASCII art.
+- `word_dictionary_bplus_tree.py` indexes 20k word/meaning pairs in a string-keyed B+ tree with exact, prefix (autocomplete), and range search.
 - `apriori_itemset.py` runs an Apriori frequent-itemset and association-rule demo.
 
 ## Requirements
@@ -17,6 +18,16 @@ Small Python scripts for two database/data-structure exercises:
 
 ```bash
 python3 b_plus_tree.py
+```
+
+### Word dictionary B+ tree demo
+
+Downloads a public Webster's dictionary dataset on first run (cached locally as
+`dictionary_data.json`), samples 20k word/meaning pairs across the alphabet, and
+demonstrates exact, prefix, and range lookups.
+
+```bash
+python3 word_dictionary_bplus_tree.py
 ```
 
 ### Apriori demo
