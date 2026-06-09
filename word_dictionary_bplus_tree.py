@@ -261,7 +261,7 @@ if __name__ == "__main__":
     
   
     dictionary_tree.search("example")
-    exit(0)
+    print("-----END SEARCH------")
     while True:
         try:
             query: str = input("\nWord> ").strip()
